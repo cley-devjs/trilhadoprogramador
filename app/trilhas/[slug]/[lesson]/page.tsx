@@ -1,0 +1,87 @@
+import { getLesson } from "@/lib/mdx"
+import { notFound } from "next/navigation"
+import { Header } from "@/components/layout/header"
+import { Sidebar } from "@/components/layout/sidebar"
+import { Button } from "@/components/ui/button"
+import { ChevronLeft, ChevronRight } from "lucide-react"
+import { ScrollArea } from "@/components/ui/scroll-area"
+
+interface PageProps {
+    params: {
+        slug: string
+        lesson: string
+    }
+}
+
+export default async function LessonPage({ params }: PageProps) {
+    const lessonData = await getLesson(params.slug, params.lesson)
+
+    if (!lessonData) {
+        notFound()
+    }
+
+    // Mock navigation data - in a real app, this would come from a config or file system
+    const sidebarItems = [
+        {
+            title: "Como funciona a internet",
+            items: [
+                { title: "Introdução", href: "/trilhas/como-funciona-a-internet/introducao" },
+                { title: "HTTP", href: "/trilhas/como-funciona-a-internet/http" },
+                { title: "DNS", href: "/trilhas/como-funciona-a-internet/dns" },
+                { title: "Servidores", href: "/trilhas/como-funciona-a-internet/servidores" },
+            ],
+        },
+        {
+            title: "HTML e CSS: O básico",
+            items: [
+                { title: "O que é HTML?", href: "/trilhas/html-css-basico/o-que-e-html" },
+
+            ],
+        },
+    ]
+
+    return (
+        <div className="flex min-h-screen flex-col">
+            <Header />
+            <div className="container flex-1 items-start md:grid md:grid-cols-[220px_minmax(0,1fr)] md:gap-6 lg:grid-cols-[240px_minmax(0,1fr)] lg:gap-10">
+                <aside className="fixed top-14 z-30 -ml-2 hidden h-[calc(100vh-3.5rem)] w-full shrink-0 md:sticky md:block">
+                    <ScrollArea className="h-full py-6 pr-6 lg:py-8">
+                        <Sidebar items={sidebarItems} />
+                    </ScrollArea>
+                </aside>
+                <main className="relative py-6 lg:gap-10 lg:py-8 xl:grid xl:grid-cols-[1fr_300px]">
+                    <div className="mx-auto w-full min-w-0">
+                        <div className="mb-4 flex items-center space-x-1 text-sm text-muted-foreground">
+                            <div className="overflow-hidden text-ellipsis whitespace-nowrap">
+                                Trilhas
+                            </div>
+                            <ChevronRight className="h-4 w-4" />
+                            <div className="font-medium text-foreground">{lessonData.frontmatter.title}</div>
+                        </div>
+                        <div className="space-y-2">
+                            <h1 className="scroll-m-20 text-4xl font-bold tracking-tight">{lessonData.frontmatter.title}</h1>
+                            <p className="text-lg text-muted-foreground">
+                                {lessonData.frontmatter.description}
+                            </p>
+                        </div>
+                        <div className="pb-12 pt-8">
+                            <div className="prose prose-zinc dark:prose-invert max-w-none">
+                                {lessonData.content}
+                            </div>
+                        </div>
+                        <div className="flex flex-row items-center justify-between">
+                            <Button variant="ghost" disabled>
+                                <ChevronLeft className="mr-2 h-4 w-4" />
+                                Anterior
+                            </Button>
+                            <Button variant="ghost" disabled>
+                                Próximo
+                                <ChevronRight className="ml-2 h-4 w-4" />
+                            </Button>
+                        </div>
+                    </div>
+                </main>
+            </div>
+        </div>
+    )
+}
