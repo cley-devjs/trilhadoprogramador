@@ -23,10 +23,19 @@ export default async function LessonPage({ params }: PageProps) {
     // Mock navigation data - in a real app, this would come from a config or file system
     const sidebarItems = [
         {
-            title: "Trilha Inicial",
+            title: "Como funciona a internet",
             items: [
-                { title: "Olá Mundo", href: "/trilhas/trilha-inicial/ola-mundo" },
-                { title: "Variáveis", href: "/trilhas/trilha-inicial/variaveis" }, // Example
+                { title: "Introdução", href: "/trilhas/como-funciona-a-internet/introducao" },
+                { title: "HTTP", href: "/trilhas/como-funciona-a-internet/http" },
+                { title: "DNS", href: "/trilhas/como-funciona-a-internet/dns" },
+                { title: "Servidores", href: "/trilhas/como-funciona-a-internet/servidores" },
+            ],
+        },
+        {
+            title: "HTML e CSS: O básico",
+            items: [
+                { title: "O que é HTML?", href: "/trilhas/html-css-basico/o-que-e-html" },
+
             ],
         },
     ]
