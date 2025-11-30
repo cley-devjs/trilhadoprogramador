@@ -12,7 +12,7 @@ export const MDXComponents: MDXRemoteProps['components'] = {
     code: (props) => <code className="relative rounded bg-muted px-[0.3rem] py-[0.2rem] font-mono text-sm font-semibold" {...props} />,
     pre: async ({ children, ...props }) => {
         if (React.isValidElement(children)) {
-            const { children: codeContent, className } = children.props as any;
+            const { children: codeContent, className } = children.props as { children: React.ReactNode; className?: string };
             if (typeof codeContent === 'string') {
                 return <CodeBlock className={className}>{codeContent}</CodeBlock>;
             }
