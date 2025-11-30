@@ -27,7 +27,7 @@ export default function AboutPage() {
               Nossa Missão
             </h2>
             <p className="max-w-[85%] leading-normal text-muted-foreground sm:text-lg sm:leading-7">
-              Acreditamos que a programação é uma ferramenta de transformação. Nosso objetivo é fornecer um caminho claro, estruturado e gratuito para quem deseja dominar a arte do desenvolvimento de software, indo além do "copia e cola".
+              Acreditamos que a programação é uma ferramenta de transformação. Nosso objetivo é fornecer um caminho claro, estruturado e gratuito para quem deseja dominar a arte do desenvolvimento de software, indo além do &quot;copia e cola&quot;.
             </p>
           </div>
           <div className="mx-auto grid justify-center gap-4 sm:grid-cols-3 md:max-w-[64rem]">
