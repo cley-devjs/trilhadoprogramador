@@ -1,18 +1,87 @@
 ---
-title: "Olá Mundo"
-description: "Entenda os fundamentos da web: HTTP, DNS, Servidores e como tudo se conecta."
+title: "Como a Internet Funciona"
+description: "Entenda os pilares da web: Cliente, Servidor, DNS e Protocolos."
 order: 1
-module: "como-funciona-a-internet"
 ---
 
-# Como funciona a internet
+Antes de escrevermos nossa primeira linha de código, precisamos entender onde esse código vai viver. A internet pode parecer mágica, mas é puramente engenharia.
 
-Bem-vindo à sua primeira aula na **Como funciona a internet**. Hoje vamos aprender o clássico "Hello World".
+Nesta aula, vamos desmistificar o que acontece nos bastidores quando você digita um endereço no navegador e aperta `Enter`.
 
-## HTTP
+## 1. Cliente e Servidor: A Dupla Dinâmica
 
-```javascript
-console.log("Olá, Mundo!");
+A web funciona baseada em uma arquitetura de **Pedido e Resposta**. Para entender isso, imagine um restaurante chique.
+
+- **O Cliente (Client):** É você (ou melhor, o seu navegador/celular). Você olha o cardápio e faz um pedido.
+- **O Servidor (Server):** É a cozinha. É lá que os ingredientes (dados) estão guardados e onde os pratos (páginas web) são preparados.
+- **A Internet:** É o garçom. Ele leva seu pedido até a cozinha e traz a comida de volta para sua mesa.
+
+<Callout type="info">
+  <strong>Resumo Técnico:</strong> O <em>Client</em> (Front-end) solicita
+  informações. O <em>Server</em> (Back-end) processa a lógica, busca no banco de
+  dados e devolve a resposta.
+</Callout>
+
+---
+
+## 2. Endereços IP (O CEP da Web)
+
+Se você quiser enviar uma carta para alguém, precisa do endereço da casa dela. Na internet, computadores não têm nomes, eles têm números.
+
+Cada dispositivo conectado à internet possui um identificador único chamado **Endereço IP** (Internet Protocol).
+
+- **IPv4:** O formato antigo, que se parece com isso: `192.168.1.1`
+- **IPv6:** O formato novo (porque os números antigos acabaram), que é muito mais complexo: `2001:0db8:85a3:0000:0000:8a2e:0370:7334`
+
+O servidor onde este site está hospedado tem um IP. O seu computador tem outro. É assim que a internet sabe para onde enviar os dados.
+
+---
+
+## 3. DNS: A Lista de Contatos
+
+Se a internet funciona com números de IP, por que digitamos `google.com` e não `142.250.74.46`?
+
+Porque humanos são péssimos em memorizar sequências numéricas. É aqui que entra o **DNS (Domain Name System)**.
+
+O DNS é como a lista de contatos do seu celular:
+
+1.  Você clica no nome "Mãe" (o Domínio).
+2.  O celular busca internamente o número `(11) 99999-9999` (o IP).
+3.  A ligação é feita.
+
+**O fluxo real:**
+
+1.  Você digita `trilhadoprogramador.dev.br`.
+2.  Seu navegador pergunta ao servidor DNS: _"Qual é o IP desse site?"_.
+3.  O DNS responde: _"O IP é 76.76.21.21"_.
+4.  Seu navegador conecta nesse IP e baixa o site.
+
+---
+
+## 4. Protocolos (O Idioma)
+
+Agora que o Cliente encontrou o Servidor, eles precisam falar a mesma língua. Esses são os **Protocolos**.
+
+O principal protocolo da web é o **HTTP** (HyperText Transfer Protocol).
+
+- **HTTP:** É como enviar um cartão postal. Qualquer um no caminho pode ler o que está escrito.
+- **HTTPS:** É como enviar uma carta em um envelope lacrado e blindado. O 'S' significa _Secure_ (Seguro). Ele criptografa os dados para que apenas o Cliente e o Servidor consigam ler.
+
+### Exemplo de uma "Conversa" HTTP
+
+Quando você acessa um site, uma conversa técnica acontece. Veja um exemplo simplificado de uma **Request** (Pedido) e uma **Response** (Resposta):
+
+```http
+// O Cliente diz:
+GET /index.html HTTP/1.1
+Host: [www.exemplo.com](https://www.exemplo.com).br
+User-Agent: Chrome/Windows
+
+// O Servidor responde:
+HTTP/1.1 200 OK
+Content-Type: text/html
+
+<html>
+  <body>Olá, mundo!</body>
+</html>
 ```
-
-Parabéns! Você acabou de ver seu primeiro código.
