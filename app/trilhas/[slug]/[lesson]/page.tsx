@@ -6,10 +6,27 @@ import { Button } from "@/components/ui/button"
 import { ChevronLeft, ChevronRight } from "lucide-react"
 import { ScrollArea } from "@/components/ui/scroll-area"
 
+import { Metadata } from "next"
+
 interface PageProps {
     params: {
         slug: string
         lesson: string
+    }
+}
+
+export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
+    const lessonData = await getLesson(params.slug, params.lesson)
+
+    if (!lessonData) {
+        return {
+            title: "Lição não encontrada",
+        }
+    }
+
+    return {
+        title: lessonData.frontmatter.title,
+        description: lessonData.frontmatter.description,
     }
 }
 
@@ -26,9 +43,9 @@ export default async function LessonPage({ params }: PageProps) {
             title: "Como funciona a internet",
             items: [
                 { title: "Introdução", href: "/trilhas/como-funciona-a-internet/introducao" },
-                { title: "HTTP", href: "/trilhas/como-funciona-a-internet/http" },
-                { title: "DNS", href: "/trilhas/como-funciona-a-internet/dns" },
-                { title: "Servidores", href: "/trilhas/como-funciona-a-internet/servidores" },
+                // { title: "HTTP", href: "/trilhas/como-funciona-a-internet/http" },
+                // { title: "DNS", href: "/trilhas/como-funciona-a-internet/dns" },
+                // { title: "Servidores", href: "/trilhas/como-funciona-a-internet/servidores" },
             ],
         },
         {
