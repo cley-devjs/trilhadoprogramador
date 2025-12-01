@@ -4,6 +4,13 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { ArrowRight, Code, Globe, Layers } from "lucide-react"
 import { Header } from "@/components/layout/header"
 
+import { Metadata } from "next"
+
+export const metadata: Metadata = {
+  title: "Início",
+  description: "Aprenda a programar do zero ao avançado. Trilhas de aprendizado gratuitas e open source.",
+}
+
 export default function Home() {
   return (
     <div className="flex min-h-screen flex-col">

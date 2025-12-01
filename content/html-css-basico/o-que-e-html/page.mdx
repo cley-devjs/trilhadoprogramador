@@ -1,0 +1,113 @@
+---
+title: "O que é HTML? O Esqueleto da Web"
+description: "Se você já se perguntou como as páginas da internet são construídas, a resposta começa com quatro letras: **HTML**."
+order: 1
+---
+
+Imagine que você vai construir uma casa. Antes de pintar as paredes ou colocar os móveis, você precisa levantar a estrutura: as fundações, as colunas, as vigas e as paredes de tijolos. O HTML é exatamente isso para um site.
+
+## 1\. O Conceito Básico
+
+**HTML** é a sigla para _HyperText Markup Language_ (Linguagem de Marcação de Hipertexto).
+
+- **Linguagem de Marcação:** Diferente de uma linguagem de programação (que envolve lógica, cálculos e condições), uma linguagem de marcação serve para **anotar** ou **estruturar** o conteúdo. Nós usamos "etiquetas" (tags) para dizer ao navegador: "Isto é um título", "Isto é um parágrafo", "Isto é uma imagem".
+- **Hipertexto:** Refere-se aos links que conectam páginas da web umas às outras, criando a teia mundial (WWW).
+
+[Image of HTML page structure diagram]
+
+## 2\. Como funciona a "Sintaxe" (As Tags)
+
+O HTML funciona através de **tags** (etiquetas). A maioria das tags possui uma abertura e um fechamento, envolvendo o conteúdo que você quer afetar.
+
+A estrutura básica se parece com isso:
+
+```html
+<nomedatag>O conteúdo vai aqui</nomedatag>
+```
+
+- **`<p>`**: Abre o parágrafo.
+- **`</p>`**: Fecha o parágrafo (note a barra `/`).
+
+**Exemplo prático:**
+Se você escrever apenas `Olá Mundo` no código, o navegador mostrará o texto. Mas se você escrever `<h1>Olá Mundo</h1>`, o navegador entenderá que aquele texto é um **Título Principal** (Heading 1) e o mostrará grande e em negrito.
+
+## 3\. A Estrutura de uma Página HTML
+
+Todo arquivo HTML segue uma estrutura padrão, como se fosse o esqueleto humano. Veja as partes principais:
+
+1.  **`<!DOCTYPE html>`**: Avisa ao navegador que este é um arquivo HTML5 moderno.
+2.  **`<html>`**: A raiz da página. Tudo fica dentro dela.
+3.  **`<head>` (Cabeça)**: Contém informações que configuram a página, mas **não aparecem** visualmente para o usuário (como o título na aba do navegador e configurações de acentuação).
+4.  **`<body>` (Corpo)**: É aqui que a mágica acontece. Tudo o que você vê na tela (textos, imagens, botões) fica dentro do `body`.
+
+### Exemplo de Código Completo
+
+Copie o código abaixo, salve em um bloco de notas como `index.html` e abra no seu navegador:
+
+```html
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Minha Primeira Página</title>
+  </head>
+  <body>
+    <h1>Bem-vindo ao mundo do HTML!</h1>
+
+    <p>Este é um parágrafo explicando que o HTML é a estrutura do site.</p>
+
+    <h2>O que eu aprendi:</h2>
+
+    <ul>
+      <li>HTML significa Linguagem de Marcação de Hipertexto.</li>
+      <li>Usamos tags para criar elementos.</li>
+      <li>Tudo o que vemos fica dentro do 'body'.</li>
+    </ul>
+
+    <a href="https://www.google.com">Clique aqui para ir ao Google</a>
+  </body>
+</html>
+```
+
+## 4\. As Principais Tags que Você Precisa Conhecer
+
+Para começar, você só precisa dominar algumas tags essenciais:
+
+| Tag             | Função                                              | Exemplo                                |
+| :-------------- | :-------------------------------------------------- | :------------------------------------- |
+| `<h1>` a `<h6>` | Títulos e subtítulos (H1 é o mais importante).      | `<h2>Subtítulo</h2>`                   |
+| `<p>`           | Parágrafos de texto.                                | `<p>Texto aqui.</p>`                   |
+| `<a>`           | Links (Anchor). O atributo `href` define o destino. | `<a href="site.com">Link</a>`          |
+| `<img>`         | Imagens. Não precisa de fechamento.                 | `<img src="foto.jpg" alt="descrição">` |
+| `<ul>` e `<li>` | Listas não ordenadas (bolinhas).                    | `<ul><li>Item 1</li></ul>`             |
+
+## 5\. HTML não anda sozinho
+
+É importante não confundir o papel do HTML com outras tecnologias. Pense no corpo humano:
+
+- **HTML (Esqueleto):** Dá a estrutura e sustentação.
+- **CSS (Pele e Roupas):** Dá o estilo, cores e beleza.
+- **JavaScript (Músculos):** Dá movimento e interatividade.
+
+O HTML sozinho é funcional, mas visualmente simples (preto e branco).
+
+[Image of HTML CSS JS analogy comparison]
+
+## Conclusão
+
+O HTML é a porta de entrada para o mundo do desenvolvimento web. Ele é simples de aprender, mas poderoso o suficiente para construir a base de todos os sites que você acessa diariamente. Entender HTML é entender como a web "fala".
+
+---
+
+### 📚 Fontes e Referências
+
+Para a elaboração deste artigo didático, foram consultadas as documentações oficiais e guias de referência padrão da indústria:
+
+1.  **MDN Web Docs (Mozilla Developer Network):** A documentação mais respeitada e completa sobre tecnologias web.
+    - _Link:_ [MDN - HTML: HyperText Markup Language](https://developer.mozilla.org/pt-BR/docs/Web/HTML)
+2.  **W3Schools:** Um portal educativo popular pela sua didática simplificada e exemplos interativos.
+    - _Link:_ [W3Schools - HTML Introduction](https://www.w3schools.com/html/html_intro.asp)
+3.  **W3C (World Wide Web Consortium):** A organização internacional que desenvolve os padrões da Web.
+    - _Link:_ [W3C HTML Standard](https://html.spec.whatwg.org/)
+
+---
