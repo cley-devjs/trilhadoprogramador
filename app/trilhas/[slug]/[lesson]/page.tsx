@@ -6,10 +6,27 @@ import { Button } from "@/components/ui/button"
 import { ChevronLeft, ChevronRight } from "lucide-react"
 import { ScrollArea } from "@/components/ui/scroll-area"
 
+import { Metadata } from "next"
+
 interface PageProps {
     params: {
         slug: string
         lesson: string
+    }
+}
+
+export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
+    const lessonData = await getLesson(params.slug, params.lesson)
+
+    if (!lessonData) {
+        return {
+            title: "Lição não encontrada",
+        }
+    }
+
+    return {
+        title: lessonData.frontmatter.title,
+        description: lessonData.frontmatter.description,
     }
 }
 

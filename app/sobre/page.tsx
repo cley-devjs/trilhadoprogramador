@@ -3,6 +3,13 @@ import { Button } from "@/components/ui/button"
 import { Header } from "@/components/layout/header"
 import { ArrowRight, BookOpen, Code2, Users, Heart } from "lucide-react"
 
+import { Metadata } from "next"
+
+export const metadata: Metadata = {
+  title: "Sobre",
+  description: "Conheça a missão e a equipe por trás da Trilha do Programador.",
+}
+
 export default function AboutPage() {
   return (
     <div className="flex min-h-screen flex-col">
@@ -64,7 +71,17 @@ export default function AboutPage() {
             <p className="max-w-[85%] leading-normal text-muted-foreground sm:text-lg sm:leading-7">
               A Trilha do Programador nasceu da vontade de compartilhar conhecimento. Mantida por desenvolvedores apaixonados por educação e tecnologia.
             </p>
-            <div className="flex items-center justify-center space-x-4 pt-4">
+            <div className="flex flex-wrap items-center justify-center gap-8 pt-4">
+               <div className="flex flex-col items-center">
+                  <div className="h-20 w-20 rounded-full bg-muted flex items-center justify-center mb-2">
+                    <span className="text-xl font-bold">CS</span>
+                  </div>
+                  <p className="font-medium">Cleyton Silva</p>
+                  <Link href="https://www.linkedin.com/in/cleyton-silva-dev/" target="_blank" rel="noopener noreferrer" className="text-sm text-muted-foreground hover:text-primary transition-colors">
+                    LinkedIn
+                  </Link>
+               </div>
+
                <div className="flex flex-col items-center">
                   <div className="h-20 w-20 rounded-full bg-muted flex items-center justify-center mb-2">
                     <Heart className="h-10 w-10 text-muted-foreground" />
