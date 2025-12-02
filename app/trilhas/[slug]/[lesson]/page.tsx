@@ -5,6 +5,7 @@ import { Sidebar } from "@/components/layout/sidebar"
 import { Button } from "@/components/ui/button"
 import { ChevronLeft, ChevronRight } from "lucide-react"
 import { ScrollArea } from "@/components/ui/scroll-area"
+import Link from "next/link"
 
 import { Metadata } from "next"
 
@@ -43,7 +44,7 @@ export default async function LessonPage({ params }: PageProps) {
             title: "Como funciona a internet",
             items: [
                 { title: "Introdução", href: "/trilhas/como-funciona-a-internet/introducao" },
-                // { title: "HTTP", href: "/trilhas/como-funciona-a-internet/http" },
+                { title: "HTTP e HTTPS", href: "/trilhas/como-funciona-a-internet/http-e-https" },
                 // { title: "DNS", href: "/trilhas/como-funciona-a-internet/dns" },
                 // { title: "Servidores", href: "/trilhas/como-funciona-a-internet/servidores" },
             ],
@@ -55,7 +56,24 @@ export default async function LessonPage({ params }: PageProps) {
 
             ],
         },
+        {
+            title: "HTML, CSS e JS: Artesanal",
+            items: [
+                { title: "Introdução ao JavaScript", href: "/trilhas/html-css-js/conhecendo-a-linguagem-js" },
+
+            ],
+        },
     ]
+
+    // Flatten items to find prev/next
+    const allLessons = sidebarItems.flatMap((section) => section.items)
+    const currentLessonIndex = allLessons.findIndex(
+        (item) => item.href === `/trilhas/${params.slug}/${params.lesson}`
+    )
+
+    const prevLesson = currentLessonIndex > 0 ? allLessons[currentLessonIndex - 1] : null
+    const nextLesson =
+        currentLessonIndex < allLessons.length - 1 ? allLessons[currentLessonIndex + 1] : null
 
     return (
         <div className="flex min-h-screen flex-col">
@@ -87,14 +105,33 @@ export default async function LessonPage({ params }: PageProps) {
                             </div>
                         </div>
                         <div className="flex flex-row items-center justify-between">
-                            <Button variant="ghost" disabled>
-                                <ChevronLeft className="mr-2 h-4 w-4" />
-                                Anterior
-                            </Button>
-                            <Button variant="ghost" disabled>
-                                Próximo
-                                <ChevronRight className="ml-2 h-4 w-4" />
-                            </Button>
+                            {prevLesson ? (
+                                <Link href={prevLesson.href}>
+                                    <Button variant="ghost">
+                                        <ChevronLeft className="mr-2 h-4 w-4" />
+                                        Anterior
+                                    </Button>
+                                </Link>
+                            ) : (
+                                <Button variant="ghost" disabled>
+                                    <ChevronLeft className="mr-2 h-4 w-4" />
+                                    Anterior
+                                </Button>
+                            )}
+
+                            {nextLesson ? (
+                                <Link href={nextLesson.href}>
+                                    <Button variant="ghost">
+                                        Próximo
+                                        <ChevronRight className="ml-2 h-4 w-4" />
+                                    </Button>
+                                </Link>
+                            ) : (
+                                <Button variant="ghost" disabled>
+                                    Próximo
+                                    <ChevronRight className="ml-2 h-4 w-4" />
+                                </Button>
+                            )}
                         </div>
                     </div>
                 </main>

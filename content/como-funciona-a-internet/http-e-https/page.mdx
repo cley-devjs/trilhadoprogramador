@@ -1,0 +1,78 @@
+---
+title: "Entendendo HTTP e HTTPS: O Guia Definitivo"
+date: "2023-10-27"
+description: "Uma explicação didática sobre como funciona a comunicação na web e a importância da segurança."
+tags: ["web", "protocolos", "segurança"]
+order: 2
+---
+
+# HTTP e HTTPS: A Base da Web
+
+Ao navegar na internet, você já deve ter notado que os endereços dos sites começam com `http://` ou `https://`. Mas o que essas siglas significam e por que aquela letra "S" extra faz toda a diferença para a sua segurança?
+
+## O que é um Protocolo?
+
+Imagine que você está tentando conversar com alguém que fala um idioma totalmente diferente. Para se entenderem, vocês precisam estabelecer regras de comunicação. Na computação, essas regras são chamadas de **Protocolos**.
+
+## 1. O Protocolo HTTP
+
+**HTTP** (_HyperText Transfer Protocol_) é o protocolo padrão para a transferência de dados na web. É ele que permite que seu navegador (cliente) peça uma página e que o site (servidor) entregue o conteúdo.
+
+### Como funciona (O Modelo Cliente-Servidor)
+
+O processo é baseado em **Requisição** e **Resposta**:
+
+1.  **Requisição (Request):** Você digita `www.exemplo.com`. Seu navegador envia um pedido ao servidor.
+2.  **Processamento:** O servidor recebe o pedido e busca os arquivos.
+3.  **Resposta (Response):** O servidor envia o site de volta para você com um código de status (ex: `200 OK` se deu certo, ou `404 Not Found` se não achou).
+
+### O Grande Problema do HTTP
+
+O HTTP transmite dados em **texto plano**.
+
+> **Analogia:** É como enviar um cartão postal pelo correio. Qualquer pessoa que manusear o cartão no caminho (carteiro, triagem) pode ler o que está escrito.
+
+Se você digitar uma senha ou número de cartão de crédito em um site HTTP, um hacker na mesma rede Wi-Fi que você pode interceptar e ler esses dados facilmente.
+
+---
+
+## 2. O Protocolo HTTPS
+
+**HTTPS** (_HyperText Transfer Protocol Secure_) é a evolução segura do HTTP. A grande diferença está no "S", que vem da camada de segurança **SSL/TLS**.
+
+### A Camada de Criptografia
+
+No HTTPS, os dados são **criptografados** antes de saírem do seu computador e só são descriptografados quando chegam ao servidor.
+
+> **Analogia:** É como enviar uma carta dentro de um cofre de aço indestrutível. Mesmo que alguém intercepte o cofre no caminho, não conseguirá abri-lo sem a chave única que só o destinatário possui.
+
+### Principais Benefícios
+
+- **Confidencialidade:** Protege senhas, dados bancários e informações pessoais.
+- **Integridade:** Garante que os dados não foram alterados no meio do caminho por terceiros.
+- **Autenticidade:** Utiliza **Certificados Digitais** para provar que o site é quem diz ser (evita que você acesse um site falso do seu banco, por exemplo).
+- **SEO:** O Google penaliza sites que não usam HTTPS, fazendo-os cair no ranking de busca.
+
+## Resumo: HTTP vs HTTPS
+
+| Característica         | HTTP                    | HTTPS                      |
+| :--------------------- | :---------------------- | :------------------------- |
+| **Dados**              | Texto Simples (Legível) | Criptografados (Ilegível)  |
+| **Porta Padrão**       | 80                      | 443                        |
+| **Certificado**        | Não necessário          | Requer certificado SSL/TLS |
+| **Ícone no Navegador** | "Não Seguro"            | Cadeado 🔒                 |
+
+---
+
+## Conclusão
+
+Hoje em dia, o uso do **HTTPS é obrigatório** para qualquer aplicação séria. Além de proteger o usuário, ele constrói confiança e melhora a visibilidade do site nos mecanismos de busca. Sempre verifique o "cadeado" ao lado da URL antes de inserir qualquer informação sensível.
+
+---
+
+## Fontes e Referências
+
+- [MDN Web Docs - HTTP](https://developer.mozilla.org/pt-BR/docs/Web/HTTP)
+- [MDN Web Docs - HTTPS](https://developer.mozilla.org/pt-BR/docs/Glossary/HTTPS)
+- [Cloudflare - O que é SSL?](https://www.cloudflare.com/pt-br/learning/ssl/what-is-ssl/)
+- [Google Search Central - HTTPS como fator de ranqueamento](https://developers.google.com/search/blog/2014/08/https-as-ranking-signal)
