@@ -72,7 +72,7 @@ export default function Home() {
                 </CardDescription>
               </CardHeader>
               <CardContent>
-                <Link href="/trilhas/html-css-basico/introducao">
+                <Link href="/trilhas/html-css-basico/o-que-e-html">
                   <Button variant="ghost" className="w-full mt-4">Começar Trilha</Button>
                 </Link>
               </CardContent>

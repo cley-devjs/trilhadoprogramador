@@ -17,7 +17,7 @@ export default function TracksPage() {
             title: "HTML e CSS: O básico para sair do zero",
             description: "Aprenda a estruturar e estilizar páginas web. O ponto de partida para qualquer dev frontend.",
             icon: Code,
-            href: "/trilhas/html-css-basico/introducao", // Placeholder link
+            href: "/trilhas/html-css-basico/o-que-e-html", // Placeholder link
             status: "Disponível"
         },
         {
