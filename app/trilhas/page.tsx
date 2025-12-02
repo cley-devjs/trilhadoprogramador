@@ -17,15 +17,15 @@ export default function TracksPage() {
             title: "HTML e CSS: O básico para sair do zero",
             description: "Aprenda a estruturar e estilizar páginas web. O ponto de partida para qualquer dev frontend.",
             icon: Code,
-            href: "/trilhas/html-css-basico/introducao", // Placeholder link
+            href: "/trilhas/html-css-basico/o-que-e-html", // Placeholder link
             status: "Disponível"
         },
         {
             title: "HTML, CSS e JS: A produção artesanal de páginas web",
             description: "Domine a tríade da web. Crie interatividade e experiências ricas sem frameworks.",
             icon: Layers,
-            href: "/trilhas/html-css-js-artesanal/introducao", // Placeholder link
-            status: "Em Breve"
+            href: "/trilhas/html-css-js/conhecendo-a-linguagem-js", // Placeholder link
+            status: "Disponível"
         }
     ]
 

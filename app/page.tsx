@@ -72,7 +72,7 @@ export default function Home() {
                 </CardDescription>
               </CardHeader>
               <CardContent>
-                <Link href="/trilhas/html-css-basico/introducao">
+                <Link href="/trilhas/html-css-basico/o-que-e-html">
                   <Button variant="ghost" className="w-full mt-4">Começar Trilha</Button>
                 </Link>
               </CardContent>
@@ -86,7 +86,9 @@ export default function Home() {
                 </CardDescription>
               </CardHeader>
               <CardContent>
-                <Button variant="ghost" className="w-full mt-4" disabled>Em Breve</Button>
+                <Link href="/trilhas/html-css-js/conhecendo-a-linguagem-js">
+                  <Button variant="ghost" className="w-full mt-4">Começar Trilha</Button>
+                </Link>
               </CardContent>
             </Card>
           </div>
