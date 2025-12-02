@@ -55,6 +55,13 @@ export default async function LessonPage({ params }: PageProps) {
 
             ],
         },
+        {
+            title: "HTML, CSS e JS: Artesanal",
+            items: [
+                { title: "Introdução ao JavaScript", href: "/trilhas/html-css-js/conhecendo-a-linguagem-js" },
+
+            ],
+        },
     ]
 
     return (

@@ -24,8 +24,8 @@ export default function TracksPage() {
             title: "HTML, CSS e JS: A produção artesanal de páginas web",
             description: "Domine a tríade da web. Crie interatividade e experiências ricas sem frameworks.",
             icon: Layers,
-            href: "/trilhas/html-css-js-artesanal/introducao", // Placeholder link
-            status: "Em Breve"
+            href: "/trilhas/html-css-js/conhecendo-a-linguagem-js", // Placeholder link
+            status: "Disponível"
         }
     ]
 
