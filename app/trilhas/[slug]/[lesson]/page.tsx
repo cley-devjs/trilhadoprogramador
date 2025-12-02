@@ -43,7 +43,7 @@ export default async function LessonPage({ params }: PageProps) {
             title: "Como funciona a internet",
             items: [
                 { title: "Introdução", href: "/trilhas/como-funciona-a-internet/introducao" },
-                // { title: "HTTP", href: "/trilhas/como-funciona-a-internet/http" },
+                { title: "HTTP e HTTPS", href: "/trilhas/como-funciona-a-internet/http-e-https" },
                 // { title: "DNS", href: "/trilhas/como-funciona-a-internet/dns" },
                 // { title: "Servidores", href: "/trilhas/como-funciona-a-internet/servidores" },
             ],
