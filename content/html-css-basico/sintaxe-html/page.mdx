@@ -1,0 +1,132 @@
+---
+title: "Sintaxe HTML: Tags, Atributos e Aninhamento"
+description: "Aprenda a 'gramática' do HTML usando a metáfora das caixas de papelão."
+order: 2
+---
+
+Se o HTML é o esqueleto da web, a **Sintaxe** é a regra de como montar esses ossos. Não adianta ter as peças se você não sabe como encaixá-las.
+
+Para entender HTML de uma vez por todas, vamos usar uma metáfora poderosa: **Caixas de Papelão**.
+
+---
+
+## 1. Tags são Caixas 📦
+
+Imagine que você está organizando uma mudança. Você tem várias caixas de papelão.
+No HTML, cada **Tag** é uma caixa.
+
+- **Conteúdo:** O que você coloca dentro da caixa (roupas, livros, brinquedos) é o **conteúdo** (texto, imagem, vídeo).
+- **Etiqueta da Caixa:** Para saber o que tem dentro, você escreve na caixa: "LIVROS", "COZINHA". No HTML, o nome da tag diz ao navegador o que tem dentro dela (`<p>` para parágrafo, `<h1>` para título).
+
+### Abertura e Fechamento
+
+Para usar uma caixa, você precisa abri-la e depois fechá-la para que nada caia, certo?
+
+```html
+<p>Este é o conteúdo da caixa.</p>
+```
+
+1.  **`<p>` (Abertura):** Você montou a caixa e abriu as abas.
+2.  **`Este é o conteúdo...`:** Você colocou suas coisas dentro.
+3.  **`</p>` (Fechamento):** Você fechou a caixa e passou a fita adesiva. Note a barra `/` que indica o fim.
+
+---
+
+## 2. Atributos: Escrevendo do lado de fora 🏷️
+
+Às vezes, só saber que a caixa contém "LIVROS" não é suficiente. Você quer ser mais específico. Você pega um marcador e escreve na lateral da caixa: _"Frágil"_, _"Peso: 10kg"_, _"Cor: Marrom"_.
+
+No HTML, essas informações extras são chamadas de **Atributos**.
+
+- Eles sempre vão na **Tag de Abertura** (você escreve na caixa antes de fechá-la).
+- Eles fornecem detalhes adicionais sobre o elemento.
+
+### Exemplo Prático: O Link
+
+A tag `<a>` cria um link. Mas um link para onde?
+Precisamos escrever na caixa o destino.
+
+```html
+<a href="https://google.com">Ir para o Google</a>
+```
+
+- **`<a>`**: É a caixa de link.
+- **`href="https://google.com"`**: É o atributo. Estamos dizendo: "Essa caixa leva para o Google".
+- **`Ir para o Google`**: É o conteúdo que o usuário vê (o que está dentro da caixa).
+
+> **Regra de Ouro:** Atributos sempre têm o formato `nome="valor"`.
+
+---
+
+## 3. Aninhamento: Caixas dentro de Caixas 🎁
+
+Na sua mudança, você tem uma caixa grande chamada "QUARTO". Dentro dela, você pode colocar uma caixa menor chamada "JÓIAS".
+
+No HTML, isso é super comum. Nós colocamos tags dentro de outras tags. Isso se chama **Aninhamento** (Nesting).
+
+```html
+<div>
+  <p>Eu sou um parágrafo dentro de uma divisão.</p>
+</div>
+```
+
+- A caixa `<div>` (Divisão) é a caixa maior.
+- A caixa `<p>` (Parágrafo) está **dentro** da `<div>`.
+
+### Cuidado com a Ordem!
+
+Se você colocou a caixa de jóias dentro da caixa do quarto, você precisa fechar a caixa de jóias **antes** de fechar a caixa do quarto.
+
+**✅ Certo:**
+
+```html
+<p>Texto com <strong>negrito</strong>.</p>
+```
+
+_(Abre P, Abre Strong, Fecha Strong, Fecha P)_
+
+**❌ Errado:**
+
+```html
+<p>Texto com <strong>negrito.</p></strong>
+```
+
+_(As caixas estão cruzadas. Isso confunde o navegador!)_
+
+---
+
+## 4. Tags Vazias (Caixas Seladas)
+
+Algumas coisas na mudança não precisam de caixa para guardar itens, elas **são** o item. Por exemplo, um quadro ou um espelho.
+
+No HTML, algumas tags não têm conteúdo dentro, elas apenas "são" ou "trazem" algo. Elas são chamadas de **Self-Closing Tags** (Tags de fechamento automático) ou Tags Vazias.
+
+- **`<img>`**: Traz uma imagem. Não tem texto dentro dela, a imagem é definida pelo atributo.
+- **`<br>`**: Uma quebra de linha.
+- **`<hr>`**: Uma linha horizontal.
+
+```html
+<!-- Exemplo de imagem -->
+<img src="foto.jpg" alt="Minha Foto" />
+```
+
+_Note que não existe `</img>`. A caixa já vem fechada de fábrica._
+
+---
+
+## Resumo da Aula
+
+1.  **Tags** são como caixas (`<tag>...</tag>`).
+2.  **Conteúdo** é o que vai dentro.
+3.  **Atributos** são anotações na parte de fora da caixa (`src="..."`, `href="..."`).
+4.  **Aninhamento** é colocar uma caixa dentro da outra (respeite a ordem de fechamento!).
+
+---
+
+## 📚 Fontes e Referências
+
+- **MDN Web Docs:**
+  - [Iniciando com o HTML](https://developer.mozilla.org/pt-BR/docs/Learn/HTML/Introduction_to_HTML/Getting_started) - Guia completo sobre elementos e atributos.
+- **W3Schools:**
+  - [HTML Attributes](https://www.w3schools.com/html/html_attributes.asp)
+  - [HTML Elements](https://www.w3schools.com/html/html_elements.asp)
