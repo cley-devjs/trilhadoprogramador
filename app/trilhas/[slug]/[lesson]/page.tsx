@@ -54,6 +54,7 @@ export default async function LessonPage({ params }: PageProps) {
             items: [
                 { title: "O que é HTML?", href: "/trilhas/html-css-basico/o-que-e-html" },
                 { title: "Sintaxe HTML", href: "/trilhas/html-css-basico/sintaxe-html" },
+                { title: "Semântica HTML", href: "/trilhas/html-css-basico/semantica-html" },
             ],
         },
         {
