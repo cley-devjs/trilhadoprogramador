@@ -44,16 +44,17 @@ export default async function LessonPage({ params }: PageProps) {
             title: "Como funciona a internet",
             items: [
                 { title: "Introdução", href: "/trilhas/como-funciona-a-internet/introducao" },
+                { title: "Cliente e Servidor", href: "/trilhas/como-funciona-a-internet/cliente-servidor" },
                 { title: "HTTP e HTTPS", href: "/trilhas/como-funciona-a-internet/http-e-https" },
-                // { title: "DNS", href: "/trilhas/como-funciona-a-internet/dns" },
-                // { title: "Servidores", href: "/trilhas/como-funciona-a-internet/servidores" },
+                { title: "DNS", href: "/trilhas/como-funciona-a-internet/dns" },
             ],
         },
         {
             title: "HTML e CSS: O básico",
             items: [
                 { title: "O que é HTML?", href: "/trilhas/html-css-basico/o-que-e-html" },
-
+                { title: "Sintaxe HTML", href: "/trilhas/html-css-basico/sintaxe-html" },
+                { title: "Semântica HTML", href: "/trilhas/html-css-basico/semantica-html" },
             ],
         },
         {
