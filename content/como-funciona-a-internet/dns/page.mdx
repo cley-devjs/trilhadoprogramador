@@ -1,0 +1,98 @@
+---
+title: "DNS: A Lista Telefônica da Internet"
+description: "Entenda como o DNS traduz nomes amigáveis em endereços IP e por que ele é vital para a navegação."
+order: 3
+---
+
+Imagine que você quer ligar para sua pizzaria favorita. Você provavelmente não decorou o número de telefone deles, certo? Você vai na sua lista de contatos, procura por "Pizzaria Delícia" e clica em chamar.
+
+O **DNS (Domain Name System)** faz exatamente a mesma coisa, mas para a internet.
+
+## O Problema: Computadores amam números, Humanos amam nomes
+
+Como vimos na aula anterior, computadores se encontram na rede através de **Endereços IP** (como `142.250.74.46`). Mas imagine ter que decorar uma sequência dessas para cada site que você visita? Seria impossível.
+
+Nós, humanos, preferimos nomes fáceis de lembrar, como `google.com`, `facebook.com` ou `trilhadoprogramador.dev.br`.
+
+O DNS é o sistema que **traduz** esses nomes amigáveis (Domínios) para os endereços IP que os computadores entendem.
+
+---
+
+## Como funciona? (A Metáfora da Lista Telefônica)
+
+Pense no DNS como uma **lista telefônica gigante e distribuída mundialmente**.
+
+1.  **Você (O Cliente):** Digita `www.exemplo.com` no navegador.
+2.  **O Navegador:** Não sabe onde fica `www.exemplo.com`. Ele grita para o sistema operacional: _"Ei, qual é o IP desse site?"_
+3.  **O Resolver (O Assistente):** Seu computador entra em contato com um servidor DNS (geralmente fornecido pelo seu provedor de internet ou configurado manualmente, como o `8.8.8.8` do Google).
+4.  **A Busca:** O servidor DNS procura na sua "lista". Se ele não souber, ele pergunta para outros servidores DNS hierarquicamente até encontrar a resposta.
+5.  **A Resposta:** O servidor DNS volta e diz: _"O IP de www.exemplo.com é 93.184.216.34"_.
+6.  **A Conexão:** Agora sim, seu navegador pega esse IP e conecta diretamente ao servidor do site.
+
+Tudo isso acontece em milissegundos!
+
+<Callout type="info">
+  <strong>Curiosidade:</strong> Sem o DNS, a internet como conhecemos não
+  existiria. Você teria que ter uma agenda física com os IPs de todos os sites
+  que gosta.
+</Callout>
+
+---
+
+## Tipos de Registros DNS
+
+O DNS não guarda apenas o IP do site. Ele é um banco de dados versátil que pode guardar diferentes tipos de informações. Aqui estão os principais "Registros" (Records) que você vai encontrar como programador:
+
+### 1. Registro A (Address)
+
+É o mais comum. Ele liga um **Domínio** diretamente a um **IP IPv4**.
+
+- **Exemplo:** `meusite.com` -> `192.0.2.1`
+
+### 2. Registro AAAA (Quad-A)
+
+Faz a mesma coisa que o Registro A, mas para endereços **IPv6** (aqueles mais longos e complexos).
+
+- **Exemplo:** `meusite.com` -> `2001:db8::1`
+
+### 3. Registro CNAME (Canonical Name)
+
+É um "apelido". Ele aponta um domínio para **outro domínio**, em vez de um IP.
+
+- **Exemplo:** `blog.meusite.com` -> `meusite.com`
+- Muito usado quando você tem subdomínios que levam para o mesmo lugar.
+
+### 4. Registro MX (Mail Exchange)
+
+Indica para onde os **e-mails** devem ser enviados. Se você manda um email para `contato@empresa.com`, o servidor de email procura o registro MX de `empresa.com` para saber onde entregar a mensagem.
+
+---
+
+## Por que isso importa para você?
+
+Como desenvolvedor, você vai lidar com DNS frequentemente:
+
+1.  **Configurando Domínios:** Quando você colocar seu projeto no ar, precisará configurar o DNS para que o mundo possa acessá-lo pelo nome que você escolheu.
+2.  **Debugando Problemas:** Muitas vezes, um site "fora do ar" é apenas um problema de DNS. O servidor está lá, funcionando, mas o "caminho" (o nome) não está apontando para o lugar certo.
+3.  **Propagação:** Quando você muda um registro DNS, pode levar algum tempo (de minutos a horas) para que essa mudança seja reconhecida em todo o mundo. Isso se chama "Propagação de DNS".
+
+---
+
+## 📚 Fontes e Referências
+
+Para aprofundar seus conhecimentos sobre como essa mágica acontece:
+
+### 📖 Leitura Recomendada
+
+- **Cloudflare Learning:**
+  - [O que é DNS?](https://www.cloudflare.com/pt-br/learning/dns/what-is-dns/) - Uma explicação detalhada e visual.
+  - [Tipos de registros DNS](https://www.cloudflare.com/pt-br/learning/dns/dns-records/)
+- **Amazon AWS:**
+  - [O que é o DNS?](https://aws.amazon.com/pt/route53/what-is-dns/)
+
+### 🎬 Vídeos
+
+- **Filipe Deschamps:**
+  - [O que é DNS? (Explicação Simples)](https://www.youtube.com/watch?v=kC89V3r54rM)
+- **NetworkChuck (Inglês):**
+  - [DNS explained in 5 minutes](https://www.youtube.com/watch?v=27r4B6kcPh4) - Ótima didática com animações.
