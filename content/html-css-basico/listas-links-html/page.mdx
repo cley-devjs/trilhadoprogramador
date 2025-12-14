@@ -1,0 +1,125 @@
+---
+title: "Listas e Links: Conectando a Web"
+description: "Aprenda a organizar informações e criar caminhos entre páginas, a base da navegação na internet."
+order: 4
+---
+
+Imagine que a Web é uma cidade gigante. Se as tags de texto (como parágrafos e títulos) são as **casas e prédios**, os Links são as **ruas e pontes** que conectam tudo. Sem eles, você estaria preso em uma ilha deserta, sem conseguir ir a lugar nenhum.
+
+E as Listas? Bem, pense nelas como os **menus de restaurantes** ou **listas de compras** dessa cidade. Elas organizam as opções para que você não precise ler um texto corrido bagunçado para escolher o que quer.
+
+Vamos aprender a construir essas estruturas fundamentais!
+
+## 1. Listas: Organizando o Caos
+
+Antes de conectar as coisas, precisamos organizá-las. No HTML, quando queremos apresentar um conjunto de itens relacionados, usamos listas. Existem dois tipos principais, e a escolha depende apenas de uma pergunta: **"A ordem importa?"**
+
+### A. Listas Não Ordenadas (`<ul>`)
+
+Imagine uma **lista de compras** de supermercado:
+- Leite
+- Pão
+- Ovos
+
+Se você pegar o pão antes do leite, faz diferença? Não. O resultado é o mesmo.
+
+Para isso, usamos a tag `<ul>` (Unordered List). Cada item da lista é um `<li>` (List Item).
+
+```html
+<ul>
+  <li>Leite</li>
+  <li>Pão</li>
+  <li>Ovos</li>
+</ul>
+```
+
+Visualmente, o navegador vai colocar aquelas **bolinhas** (bullet points) antes de cada item. É a base de quase todos os **menus de navegação** que você vê por aí!
+
+### B. Listas Ordenadas (`<ol>`)
+
+Agora, imagine uma **receita de bolo** ou um **tutorial passo-a-passo**:
+1. Quebre os ovos.
+2. Bata a massa.
+3. Coloque no forno.
+
+Se você colocar no forno antes de bater a massa, vai dar tudo errado! Aqui, a ordem é crucial.
+
+Para isso, usamos a tag `<ol>` (Ordered List). Os itens continuam sendo `<li>`.
+
+```html
+<ol>
+  <li>Quebre os ovos</li>
+  <li>Bata a massa</li>
+  <li>Coloque no forno</li>
+</ol>
+```
+
+O navegador vai numerar automaticamente para você: 1, 2, 3... Se você adicionar um item no meio, ele renumera tudo sozinho. Mágico, né?
+
+## 2. Links (`<a>`): As Portes da Web
+
+A tag `<a>` vem de "Anchor" (Âncora). Ela joga uma âncora de onde você está para onde você quer ir. É ela que torna a "Web" (Teia) interconectada.
+
+Para criar um link, precisamos de um atributo obrigatório: o `href` (Hypertext Reference). Pense no `href` como o **endereço** do destino no GPS.
+
+```html
+<a href="https://www.google.com">Ir para o Google</a>
+```
+
+- **`href="..."`**: O destino.
+- **"Ir para o Google"**: O texto clicável (o que o usuário vê).
+
+### Caminhos Absolutos vs. Relativos
+
+Essa é a parte que confunde muita gente, mas vamos simplificar com nossa metáfora da cidade.
+
+#### Caminhos Absolutos
+É como dar o endereço completo para um correio internacional: *"Rua Tal, Número X, Bairro Y, Cidade Z, País W"*. Não importa onde você esteja no mundo, esse endereço sempre vai chegar no mesmo lugar.
+
+Na Web, é o URL completo, começando com `https://`.
+
+```html
+<!-- Link Absoluto: Vai para outro site -->
+<a href="https://www.wikipedia.org">Wikipédia</a>
+```
+
+Use quando for linkar para **sites externos** (fora do seu projeto).
+
+#### Caminhos Relativos
+É como dar direções para um vizinho: *"Vire na próxima esquina à direita"*. Essas instruções dependem de **onde você está agora**. Se você mudar de casa, a instrução "vire à direita" pode te levar para o lugar errado.
+
+Na Web, é o caminho dentro das pastas do seu próprio projeto.
+
+- `pagina.html`: "Procure um arquivo com esse nome **nesta mesma pasta**."
+- `/sobre`: "Vá para a pasta raiz e procure a pasta 'sobre'."
+
+```html
+<!-- Link Relativo: Vai para uma página interna do seu site -->
+<a href="/contato">Fale Conosco</a>
+```
+
+Use quando for linkar para **páginas internas** do seu próprio site. É mais rápido e, se você mudar o domínio do site (de `.com` para `.com.br`, por exemplo), os links continuam funcionando!
+
+## Conclusão
+
+Dominar listas e links é dominar a estrutura da navegação.
+- Use `<ul>` para menus e itens sem ordem.
+- Use `<ol>` para passos e instruções.
+- Use `<a>` com `href` para conectar tudo.
+
+Lembre-se: Um site sem links é uma rua sem saída. Um site sem listas é um quarto bagunçado. Organize e conecte!
+
+---
+
+### 📚 Fontes e Referências
+
+Para a elaboração deste artigo didático, foram consultadas as documentações oficiais e guias de referência padrão da indústria:
+
+1.  **MDN Web Docs (Mozilla Developer Network):**
+    - _Link:_ [Listas HTML](https://developer.mozilla.org/pt-BR/docs/Learn/HTML/Introduction_to_HTML/HTML_text_fundamentals#listas)
+    - _Link:_ [Criando Hiperlinks](https://developer.mozilla.org/pt-BR/docs/Learn/HTML/Introduction_to_HTML/Creating_hyperlinks)
+2.  **W3Schools:**
+    - _Link:_ [HTML Lists](https://www.w3schools.com/html/html_lists.asp)
+    - _Link:_ [HTML Links](https://www.w3schools.com/html/html_links.asp)
+3.  **Web.dev (Google):**
+    - _Link:_ [Learn HTML - Lists](https://web.dev/learn/html/lists/)
